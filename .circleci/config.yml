@@ -6,12 +6,14 @@ jobs:
     steps:
       - checkout
       - run:
-          command: cd API && npm install
+          working_directory: API
+          command: npm install
       - run:
-          command: cd API && npm test
+          working_directory: API
+          command: npm test
       - run:
-          working_directory: /
+          working_directory: .
           command: |
-            sudo apt-get install awscli
+            npm install
       - run:
-          command: sls deploy list
+          command: serverless deploy list
