@@ -25,12 +25,11 @@ jobs:
           # ＜ Circle CI の設定 ＞
           # CircleCIの BUILDS>PROJECTS>Settings>Environment Variables画面より、
           # AWS_ACCESS_KEY と AWS_SECRET_KEY を設定してください。
-          #
           name: Deploy API
           working_directory: ./API
           command: |
-            # sls config credentials -k ${AWS_ACCESS_KEY} -s ${AWS_SECRET_KEY} -p aws
-            # sls deploy
+            sls config credentials -k ${AWS_ACCESS_KEY} -s ${AWS_SECRET_KEY} -p aws
+            sls deploy
 
       - run:
           name: Run API e2e Test
