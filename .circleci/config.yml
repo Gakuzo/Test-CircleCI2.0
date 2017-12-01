@@ -6,14 +6,17 @@ jobs:
     steps:
       - checkout
       - run:
+          name: Install libralies for API
           working_directory: API
           command: npm install
       - run:
+          name: API Unit Test
           working_directory: API
           command: npm test
       - run:
+          name: Install serverless
           working_directory: .
           command: |
-            npm install
+            npm install -g
       - run:
           command: serverless deploy list
