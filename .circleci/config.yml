@@ -9,3 +9,5 @@ jobs:
           command: cd API && npm install
       - run:
           command: cd API && npm test
+      - run:
+          command: cd API && sls deploy list
