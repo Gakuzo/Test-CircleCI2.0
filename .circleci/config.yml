@@ -19,4 +19,4 @@ jobs:
           command: |
             sudo npm install -g
       - run:
-          command: serverless deploy list
+          command: sls deploy list
