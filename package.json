@@ -10,6 +10,6 @@
   "dependencies": {
     "serverless": "^1.23.0"
   },
-  "devDependencies": {
-  }
+  "devDependencies": {},
+  "private": true
 }

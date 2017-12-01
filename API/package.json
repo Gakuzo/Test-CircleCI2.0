@@ -28,5 +28,6 @@
     "proxyquire": "^1.8.0",
     "sinon": "^4.1.1",
     "sinon-chai": "^2.14.0"
-  }
+  },
+  "private": true
 }
