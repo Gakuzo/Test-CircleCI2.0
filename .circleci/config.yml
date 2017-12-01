@@ -31,3 +31,9 @@ jobs:
           command: |
             sls config credentials -k ${AWS_ACCESS_KEY} -s ${AWS_SECRET_KEY} -p aws
             sls deploy
+
+      - run:
+          name: Run e2e Test
+          working_directory: ./API
+          command: npm run e2e
+
