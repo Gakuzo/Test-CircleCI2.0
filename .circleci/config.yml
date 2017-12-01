@@ -10,6 +10,8 @@ jobs:
       - run:
           command: cd API && npm test
       - run:
-          command: pip install awscli
+          working_directory: /
+          command: |
+            apt-get install awscli
       - run:
           command: sls deploy list
