@@ -12,6 +12,6 @@ jobs:
       - run:
           working_directory: /
           command: |
-            apt-get install awscli
+            sudo apt-get install awscli
       - run:
           command: sls deploy list
