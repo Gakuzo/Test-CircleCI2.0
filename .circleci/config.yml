@@ -29,11 +29,8 @@ jobs:
           name: Deploy Test
           working_directory: ./API
           command: |
-            sls config credentials -k ${AWS_ACCESS_KEY} -s ${AWS_SECRET_KEY} -p aws
-            
-            # CircleCIのテストとしてdeployを通過させるため listにしています。
-            sls deploy list
-            # sls deploy
+            # sls config credentials -k ${AWS_ACCESS_KEY} -s ${AWS_SECRET_KEY} -p aws
+            sls deploy
 
       - run:
           name: Run e2e Test
