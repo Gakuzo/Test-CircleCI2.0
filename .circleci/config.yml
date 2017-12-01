@@ -15,8 +15,10 @@ jobs:
           command: npm test
       - run:
           name: Install serverless
-          working_directory: .
+          working_directory: ~/
           command: |
             sudo npm install -g serverless
       - run:
+          name: Deploy Test
+          working_directory: ~/
           command: sls deploy list
