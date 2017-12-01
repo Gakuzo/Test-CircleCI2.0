@@ -17,6 +17,6 @@ jobs:
           name: Install serverless
           working_directory: .
           command: |
-            npm install -g
+            sudo npm install -g
       - run:
           command: serverless deploy list
