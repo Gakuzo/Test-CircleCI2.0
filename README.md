@@ -44,3 +44,12 @@ jobs:
       # run tests!
       - run: yarn test
 ```
+
+### Circle CI上でのパスワードの設定方法
+
+(参考) 
+https://circleci.com/docs/2.0/env-vars/
+```
+Adding Environment Variables in the App
+To add keys or secret environment variables to your private project, use the Environment Variables page of the Build > Project > Settings in the CircleCI application. The value of the variables are neither readable nor editable in the app after they are set. To change the value of an environment variable, delete the current variable and add it again with the new value. It is possible to add individual variables or to import variables from another project.
+```
