@@ -8,12 +8,12 @@ jobs:
 
       - run:
           name: Install libralies for API
-          working_directory: ~/API
+          working_directory: ./API
           command: npm install
 
       - run:
           name: API Unit Test
-          working_directory: ~/API
+          working_directory: ./API
           command: npm test
 
       - run:
@@ -27,7 +27,7 @@ jobs:
           # AWS_ACCESS_KEY と AWS_SECRET_KEY を設定してください。
           #
           name: Deploy Test
-          working_directory: ~/API
+          working_directory: ./API
           command: |
             sls config credentials -k ${AWS_ACCESS_KEY} -s ${AWS_SECRET_KEY} -p aws
             sls deploy
