@@ -1,0 +1,32 @@
+{
+  "name": "test02",
+  "version": "1.0.0",
+  "description": "Circle CI 2.0 Test",
+  "scripts": {
+    "test": "mocha test/spec/*/*.spec.js",
+    "test-cover": "istanbul cover --print both _mocha -- test/spec/*/*.spec.js",
+    "test-simple": "mocha"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "serverless": "^1.23.0",
+    "bluebird": "^3.5.0",
+    "pg-promise": "^6.4.0"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "chai-as-promised": "^7.1.1",
+    "eslint": "^4.8.0",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-node": "^5.1.1",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "istanbul": "^0.4.5",
+    "mocha": "^4.0.1",
+    "proxyquire": "^1.8.0",
+    "sinon": "^4.1.1",
+    "sinon-chai": "^2.14.0"
+  }
+}
