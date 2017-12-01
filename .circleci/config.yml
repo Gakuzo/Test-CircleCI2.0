@@ -5,20 +5,25 @@ jobs:
       - image: circleci/node:8-browsers
     steps:
       - checkout
+
       - run:
           name: Install libralies for API
           working_directory: API
           command: npm install
+
       - run:
           name: API Unit Test
           working_directory: API
           command: npm test
+
       - run:
           name: Install serverless
           working_directory: ~/
-          command: |
-            sudo npm install -g serverless
+          command: sudo npm install -g serverless
+
       - run:
           name: Deploy Test
           working_directory: ~/
-          command: sls deploy list
+          command: |
+            sls config credentials -k ${AWS_ACCESS_KEY} -s ${AWS_SECRET_KEY} -p aws
+            sls deploy list
