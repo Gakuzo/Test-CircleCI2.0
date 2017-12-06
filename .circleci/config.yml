@@ -16,25 +16,16 @@ jobs:
           working_directory: ./API
           command: npm test
 
-      # - run:
-      #     name: Install serverless
-      #     working_directory: ~/
-
       - run:
           # ＜ Circle CI の設定 ＞
           # CircleCIの BUILDS>PROJECTS>Settings>Environment Variables画面より、
           # AWS_ACCESS_KEY と AWS_SECRET_KEY を設定してください。
 
           # TODO master ブランチかどうか判定してから実行する必要があるか？
-          # filters:
-          #   branches:
-          #     # masterブランチのみ実施
-          #     only: dev
-
           name: Deploy API
           working_directory: ./API
           command: |
-            if [ "${CIRCLE_BRANCH}" == "dev" ]; then
+            if [ "${CIRCLE_BRANCH}" == "master" ]; then
               sudo npm install -g serverless
               sls config credentials -k ${AWS_ACCESS_KEY} -s ${AWS_SECRET_KEY} -p aws
               sls deploy
