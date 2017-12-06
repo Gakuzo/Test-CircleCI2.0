@@ -30,7 +30,7 @@ jobs:
           filters:
             branches:
               # masterブランチのみ実施
-              only: master
+              only: dev
 
           name: Deploy API
           working_directory: ./API
