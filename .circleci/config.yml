@@ -22,17 +22,14 @@ jobs:
           # AWS_ACCESS_KEY と AWS_SECRET_KEY を設定してください。
 
           # TODO master ブランチかどうか判定してから実行する必要があるか？
-          name: Deploy API
+          name: Deploy API & e2e Test
           working_directory: ./API
           command: |
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
               sudo npm install -g serverless
               sls config credentials -k ${AWS_ACCESS_KEY} -s ${AWS_SECRET_KEY} -p aws
               sls deploy
+              npm run e2e
             fi
 
-      - run:
-          name: Run API e2e Test
-          working_directory: ./API
-          command: npm run e2e
-
+# git add . ; git commit -m "CircleCI2.0のテストです。"; git push
