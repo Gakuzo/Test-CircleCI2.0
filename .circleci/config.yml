@@ -26,15 +26,15 @@ jobs:
           # AWS_ACCESS_KEY と AWS_SECRET_KEY を設定してください。
 
           # TODO master ブランチかどうか判定してから実行する必要があるか？
-          filters:
-            branches:
-              # masterブランチのみ実施
-              only: dev
+          # filters:
+          #   branches:
+          #     # masterブランチのみ実施
+          #     only: dev
 
           name: Deploy API
           working_directory: ./API
           command: |
-            if [ "${CIRCLE_BRANCH}" == "master" ]; then
+            if [ "${CIRCLE_BRANCH}" == "dev" ]; then
               sudo npm install -g serverless
               sls config credentials -k ${AWS_ACCESS_KEY} -s ${AWS_SECRET_KEY} -p aws
               sls deploy
