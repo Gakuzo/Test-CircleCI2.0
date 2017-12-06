@@ -21,6 +21,8 @@ jobs:
           working_directory: ~/
           command: sudo npm install -g serverless
 
+        # TODO master ブランチかどうか判定してから実行する必要があるか？
+        
       - run:
           # ＜ Circle CI の設定 ＞
           # CircleCIの BUILDS>PROJECTS>Settings>Environment Variables画面より、
