@@ -1,8 +1,6 @@
-# test02
+# Circle CI2.0テスト
 
-### Circle CIテスト
-
-(参考) Circle CIのセットアップ
+## (参考) Circle CIのセットアップ
 https://circleci.com/setup-project/gh/manabufujisawa/test02
 
 ```
@@ -45,7 +43,7 @@ jobs:
       - run: yarn test
 ```
 
-### Circle CI上でのパスワードの設定方法
+## Circle CI上でのパスワードの設定方法
 
 (参考) 
 https://circleci.com/docs/2.0/env-vars/
